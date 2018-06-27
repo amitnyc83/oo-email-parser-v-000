@@ -2,7 +2,7 @@
 # emails. The parse method on the class should separate them into
 # unique email addresses. The delimiters to support are commas (',')
 # or whitespace (' ').
-
+require..'pry'
 
 class EmailParser
   attr_accessor :name, :csv_emails
@@ -23,6 +23,7 @@ class EmailParser
 #split it into an array and iterate over it and split it again at the ","
 #and if it is a duplicate it will remove them
   def parse
+    binding.pry
     name.split.collect do |address|
       address.split(',')
     end.flatten.uniq
